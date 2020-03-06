@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Molloy - Accordion Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keyword" content="">
+
+    <!-- VENDORS -->
+    <link href="vendors/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="vendors/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+
+    <!-- LOCAL -->
+    <link href="resources/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <noscript><div id="noscript-wrapper">Molloy College needs JavaScript enabled in your browser.</div></noscript>
+
+    <!--header start-->
+    <header class="header black-bg" style="position: relative;height: 100px;">
+        <div class="sidebar-toggle-box">
+            <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+        </div>
+        <!--logo start-->
+        <a class="" id="logo">
+		  <img class="default-logo" alt="Molloy College" src="resources/img/molloy_logo_256x158.png" />
+		  <img class="retina-logo" alt="Molloy College" src="resources/img/molloy_logo_256x158_300dpi.png" /> 							
+		</a>
+        <!--logo end-->
+        <h3 class="app-title">Accordion <span style="color: #981E32;">Generator</span></h3>
+    </header>
+    <br/>
+    <div id="carousel-wrapper">
+        <!-- Upload file for automation -->
+            <div class="row">
+                <div class="col-md-12">
+                     <form>
+                        <div>
+                            <h1 id="body-heading">Automate the generation of Accordion HTML</h1>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="results" style="display: none">
+            </div>
+
+    <!-- Upload file for automation -->
+    <div className="row">
+      <!-- SLIDE 2 -->
+      <br/>
+      <h2>Add and remove "Panels" below: </h2>
+      <br/>
+
+      <ul id="generate-html-input-ul" style="list-style: none">
+          <li>
+              <button type="button" class="btn btn-default btn-sm deleteButton">
+                      <i class="far fa-trash-alt"></i>
+              </button>
+              <div class="row">
+              <div class="col-md-4">
+                <h4 class="header-notice">Header</h4>
+                <textarea class="header-text"></textarea>
+              </div>
+              <div class="col-md-8">
+                <h4 class="header-content-area">Content Area - <strong>Plain Text or HTML</strong></h4>
+                <textarea class="content-area-text"></textarea>
+              <br/>
+            </div>
+            </div>
+          </li>
+      </ul>
+      <div class="add-button-container">
+        <button id="panelAddButton" type="button" class="btn btn-default btn-lg add buttonAddInput"><i class="far fa-plus-square"></i></button>
+      </div>
+      <button style="margin-top: 20px;" class="btn btn-lg btn-login btn-block" id="word-export-button">Generate HTML</button>
+    </div>
+  </br>
+    <hr/>
+  </br>
+    <h2>RESULTS:</h2>
+    <div id="html-2-pdfwrapper" class="word-content">
+      <h3 style="text-align: center;"><span style="color: #a50021;"><strong>ACCORDION COMPONENT</strong></span></h3>
+      <h3 style="text-align: center;"><strong><span id="position-title-top"></span></strong></h3>
+      <h3><span style="color: #a50021;"><strong>Accordion HTML:</strong></span></h3>
+
+      <p id="panels-fill">
+        
+      </p>
+
+      <h3><span style="color: #a50021;"><strong>Accordion CSS:</strong></span></h3>
+      <p id="css-word"></p>
+
+      <h3><span style="color: #a50021;"><strong>Accordion Javascript:</strong></span></h3>
+      <p id="js-word"></p>
+  </div>
+</br>
+<hr/>
+</br>
+  <h2>PREVIEW:</h2>
+    <div class="container">
+      <div id="accordion-preview">
+      
+      </div>
+    </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+</body>
+
+<script src="vendors/js/jquery.js"></script>
+<script src="vendors/js/FileSaver.js"></script>
+<script src="vendors/js/jquery.wordexport.js"></script>
+<script src='vendors/js/jspdf.min.js'></script>
+<script src="vendors/js/html2pdf.bundle.min.js"></script>
+<script src="vendors/js/bootstrap.min.js"></script>
+<script src="vendors/js/bootstrap.bundle.min.js"></script>
+<script src="resources/js/scripts.js"></script>
+
+</html>

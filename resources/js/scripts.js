@@ -30,6 +30,7 @@
  function assignTextFields() {
      $('#generate-html-input-ul li').each(function(index) {
         $('#panels-fill').text(
+          $('#panels-fill').text() +
           '<div><button class="accordion"><strong>'+$(this).find("textarea.header-text").val()+'</strong></button><div class="panel"><p>'+$(this).find("textarea.content-area-text").val()+'</p></div></div>'
         );
         $('#accordion-preview').append(
@@ -63,9 +64,32 @@ function generateWord() {
       }
 }
 
+function generate() {
+  resetStaticElements();
+  assignTextFields();
+  var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        console.log('click')
+        this.classList.toggle("active-custom");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+}
+
  // EVENT HANDLERS
  $('#word-export-button').click(function (events) {
      generateWord();
  });
+
+ $('#generate-button').click(function (events) {
+    generate();
+  });
 
  // ACCORDION
